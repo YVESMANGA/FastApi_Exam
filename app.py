@@ -6,6 +6,7 @@ import pandas as pd
 import joblib
 import numpy as np
 import io
+from fastapi.middleware.cors import CORSMiddleware
 
 # ======================
 # Initialisation de l'API

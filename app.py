@@ -12,6 +12,20 @@ import io
 # ======================
 app = FastAPI(title="API de prédiction de faux billets")
 
+
+origins = [
+    "https://appapp-nfpcetlczdmgrygg4skk2j.streamlit.app/",  # ton app Streamlit
+    "https://fastapi-api-54e7.onrender.com",  # optionnel
+    "*"  # à enlever en prod pour plus de sécurité
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # ======================
 # Chargement des modèles
 # ======================
